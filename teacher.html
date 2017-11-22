@@ -31,16 +31,26 @@
         4-columns-wide on medium screens,
         12-columns-wide on small screens  -->
 
-        <div style="border: 0;" class="collection">
+        <div style="border: 0;" class="collection" id="menulist">
             <a style="border: 0; margin: 0;" href="#!" class="collection-item">总览</a>
             <a style="border: 0; margin: 0;" href="#!" class="collection-item"><i class="mdi-action-list"></i>学生管理</a>
             <a style="border: 0; margin: 0;" href="#!" class="collection-item">作业管理</a>
+
         </div>
 
     </div>
 
     <script>
         //根据地址栏路径将对应的菜单设置为active
+        var path = window.location.pathname;
+        var menus = $('#menulist').find('li');
+        var menus_num = menus.length;
+        for (var i = menus_num - 1; i >= 0; i--) {
+            if (path.indexOf(menus[i].getAttribute('href')) >= 0) {
+                $(menus[i]).addClass('active');
+                break;
+            }
+        }
     </script>
 
     <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
