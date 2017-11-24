@@ -32,19 +32,19 @@
 
         <div style="border: 0;" class="collection" id="menulist">
             <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                        style="vertical-align:bottom">list</i>&nbsp;&nbsp;总览</a>
+                                                                                       style="vertical-align:bottom">list</i>&nbsp;&nbsp;总览</a>
             <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                        style="vertical-align:bottom">info</i>&nbsp;&nbsp;学生管理</a>
+                                                                                       style="vertical-align:bottom">star</i>&nbsp;&nbsp;学生管理</a>
             <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                        style="vertical-align:bottom">info</i>&nbsp;&nbsp;作业管理</a>
+                                                                                       style="vertical-align:bottom">star</i>&nbsp;&nbsp;作业管理</a>
         </div>
 
     </div>
 
     <script>
         //根据地址栏路径将对应的菜单设置为active
-        var path = window.location.pathname;
-        var menus = $('#menulist').find('li');
+        var path = window.location.pathname;//获取路径
+        var menus = $('#menulist').find('li');//左侧导航栏的列表项
         var menus_num = menus.length;
         for (var i = menus_num - 1; i >= 0; i--) {
             if (path.indexOf(menus[i].getAttribute('href')) >= 0) {
@@ -61,10 +61,73 @@
         9-columns-wide on large screens,
         8-columns-wide on medium screens,
         12-columns-wide on small screens  -->
-        page content
-    </div>
 
-</div>
+        <h5>作业概览</h5>
+        <table>
+            <thead>
+            <tr>
+                <th data-field="id">序号</th>
+                <th data-field="release">已发布</th>
+                <th data-field="deadline">进行中</th>
+                <th data-field="details">详情</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="hoverable">
+                <td>作业1</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业2</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业3</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            </tbody>
+        </table>
+
+        <h5>学生概览</h5>
+        <table>
+            <thead>
+            <tr>
+                <th data-field="name">姓名</th>
+                <th data-field="id">学号</th>
+                <th data-field="GitHub">GitHub</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr class="hoverable">
+                <td>学生1</td>
+                <td>20160000</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生2</td>
+                <td>20160001</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生3</td>
+                <td>20160002</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>
