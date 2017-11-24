@@ -31,30 +31,28 @@
         12-columns-wide on small screens  -->
 
         <div style="border: 0;" class="collection" id="menulist">
-            <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                                       style="vertical-align:bottom">list</i>&nbsp;&nbsp;总览</a>
-            <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                                       style="vertical-align:bottom">star</i>&nbsp;&nbsp;学生管理</a>
-            <a style="border: 0; " href="#!" class="collection-item grey lighten-4"><i class="material-icons"
-                                                                                       style="vertical-align:bottom">star</i>&nbsp;&nbsp;作业管理</a>
+            <a style="border: 0; " href="teacher.html" class="collection-item grey lighten-2"><i
+                    class="material-icons"
+                    style="vertical-align:bottom">list</i>&nbsp;&nbsp;总览</a>
+            <a style="border: 0; " href="students.html" class="collection-item grey lighten-4"><i
+                    class="material-icons"
+                    style="vertical-align:bottom">star</i>&nbsp;&nbsp;学生管理</a>
+            <a style="border: 0; " href='#' class="dropdown-button collection-item grey lighten-4 "
+               data-activates='experiment-list'><i
+                    class="material-icons" data-beloworigin="true"
+                    style="vertical-align:bottom">star</i>&nbsp;&nbsp;作业管理</a>
+            <ul class='dropdown-content' id='experiment-list'>
+                <li><a href='#!'>one</a></li>
+                <li class="divider"></li>
+                <li><a href='#!'>two</a></li>
+                <li class="divider"></li>
+                <li><a href='#!'>three</a></li>
+            </ul>
         </div>
-
     </div>
 
-    <script>
-        //根据地址栏路径将对应的菜单设置为active
-        var path = window.location.pathname;//获取路径
-        var menus = $('#menulist').find('li');//左侧导航栏的列表项
-        var menus_num = menus.length;
-        for (var i = menus_num - 1; i >= 0; i--) {
-            if (path.indexOf(menus[i].getAttribute('href')) >= 0) {
-                $(menus[i]).addClass('active');
-                break;
-            }
-        }
-    </script>
 
-    <div class="col s12 m8 l9"> <!-- Note that "m8 l9" was added -->
+    <div class="col s12 m8 l9" style="padding: 20px 11.25px;"> <!-- Note that "m8 l9" was added -->
         <!-- Teal page content
 
         This content will be:
@@ -92,7 +90,39 @@
             <tr class="hoverable">
                 <td>作业3</td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">check</i></td>
+                       style="vertical-align:bottom">close</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业4</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业5</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业6</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
+                <td>查看</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业7</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">close</i></td>
                 <td><i class="material-icons"
                        style="vertical-align:bottom">close</i></td>
                 <td>查看</td>
@@ -100,12 +130,13 @@
             </tbody>
         </table>
 
-        <h5>学生概览</h5>
+        <h5 style="padding: 15px 0 9.84px 0">学生概览</h5>
         <table>
             <thead>
             <tr>
                 <th data-field="name">姓名</th>
                 <th data-field="id">学号</th>
+                <th data-field="class">班级</th>
                 <th data-field="GitHub">GitHub</th>
             </tr>
             </thead>
@@ -113,16 +144,55 @@
             <tr class="hoverable">
                 <td>学生1</td>
                 <td>20160000</td>
+                <td>软件工程1601</td>
                 <td><a href="https://www.github.com/lzw429">查看</a></td>
             </tr>
             <tr class="hoverable">
                 <td>学生2</td>
                 <td>20160001</td>
+                <td>软件工程1601</td>
                 <td><a href="https://www.github.com/lzw429">查看</a></td>
             </tr>
             <tr class="hoverable">
                 <td>学生3</td>
                 <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生4</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生5</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生6</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生7</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生8</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
+                <td><a href="https://www.github.com/lzw429">查看</a></td>
+            </tr>
+            <tr class="hoverable">
+                <td>学生9</td>
+                <td>20160002</td>
+                <td>软件工程1601</td>
                 <td><a href="https://www.github.com/lzw429">查看</a></td>
             </tr>
             </tbody>
