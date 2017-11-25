@@ -34,44 +34,34 @@
         4-columns-wide on medium screens,
         12-columns-wide on small screens  -->
 
-        <div style="border: 0; padding-bottom: 120%" class="collection" id="menulist">
-            <a style="border: 0; " href="teacher.html" class="collection-item grey lighten-2 blue-text"><i
-                    class="material-icons "
+        <div style="border: 0; padding-bottom: 150%" class="collection" id="menulist">
+            <a style="border: 0; " href="teacher.html" class="collection-item grey lighten-2 grey-text"><i
+                    class="material-icons blue-text"
                     style="vertical-align:bottom">list</i>&nbsp;&nbsp;总览
             </a>
-            <a style="border: 0; " href="students.html" class="collection-item grey lighten-4 black-text"><i
+            <a style="border: 0; " href="students.html" class="collection-item grey lighten-4 grey-text"><i
                     class="material-icons"
                     style="vertical-align:bottom">star</i>&nbsp;&nbsp;学生管理
             </a>
             <a style="border: 0; " href='#' data-target="#"
-               class="dropdown-button collection-item grey lighten-4 black-text" data-activates='experiment-list'><i
+               class="dropdown-button collection-item grey lighten-4 grey-text" data-activates='experiment-list'
+               data-beloworigin="true"><i
                     class="material-icons"
                     style="vertical-align:bottom" data-toggle="dropdown">star</i>&nbsp;&nbsp;作业管理
             </a>
         </div>
     </div>
 
-    <ul id="experiment-list" class="dropdown-content">
-        <li><a href="#!">作业一</a></li>
+    <ul id="experiment-list" class="dropdown-content grey-text grey lighten-4 z-depth-2">
+        <li><a href="experiment1.html">作业一</a></li>
         <li><a href="#!">作业二</a></li>
         <li><a href="#!">作业三</a></li>
         <li><a href="#!">作业四</a></li>
         <li><a href="#!">作业五</a></li>
         <li><a href="#!">作业六</a></li>
         <li><a href="#!">作业七</a></li>
-        <li><a href="#!">作业八</a></li>
+        <li><a href="#!">添加作业</a></li>
     </ul>
-    <script> $('.dropdown-button').dropdown({
-            inDuration: 300,
-            outDuration: 225,
-            constrainWidth: false, // Does not change width of dropdown to that of the activator
-            hover: false, // Activate on hover
-            gutter: 0, // Spacing from edge
-            belowOrigin: true, // Displays dropdown below the button
-            alignment: 'left', // Displays dropdown with edge aligned to the left of button
-            stopPropagation: true // Stops event propagation
-        }
-    );</script>
 
     <div class="col s12 m8 l9" style="padding: 20px 11.25px;"><!-- Note that "m8 l9" was added -->
         <!-- Teal page content
@@ -87,7 +77,11 @@
             <tr>
                 <th data-field="id">序号</th>
                 <th data-field="release">已发布</th>
-                <th data-field="deadline">进行中</th>
+                <th data-field="status">进行中</th>
+                <th data-field="deadline">截止时间</th>
+                <th data-field="download_times">已下载</th>
+                <th data-field="submit_times">已提交</th>
+                <th data-field="is_passed">验收通过</th>
                 <th data-field="details">详情</th>
             </tr>
             </thead>
@@ -105,31 +99,31 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td>查看</td>
             </tr>
             <tr class="hoverable">
                 <td>作业3</td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td>查看</td>
             </tr>
             <tr class="hoverable">
                 <td>作业4</td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td>查看</td>
             </tr>
             <tr class="hoverable">
                 <td>作业5</td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td><i class="material-icons"
-                       style="vertical-align:bottom">close</i></td>
+                       style="vertical-align:bottom">check</i></td>
                 <td>查看</td>
             </tr>
             <tr class="hoverable">
@@ -155,70 +149,18 @@
         <table>
             <thead>
             <tr>
-                <th data-field="name">姓名</th>
-                <th data-field="id">学号</th>
-                <th data-field="class">班级</th>
-                <th data-field="GitHub">GitHub</th>
+                <th>学生总数</th>
+                <th>GitHub绑定人数</th>
+
             </tr>
             </thead>
             <tbody>
             <tr class="hoverable">
-                <td>学生1</td>
-                <td>20160000</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
+                <td>24</td>
+                <td>16</td>
             </tr>
-            <tr class="hoverable">
-                <td>学生2</td>
-                <td>20160001</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生3</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生4</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生5</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生6</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生7</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生8</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            <tr class="hoverable">
-                <td>学生9</td>
-                <td>20160002</td>
-                <td>软件工程1601</td>
-                <td><a href="https://www.github.com/lzw429">查看</a></td>
-            </tr>
-            </tbody>
         </table>
     </div>
-
+</div>
 </body>
 </html>
