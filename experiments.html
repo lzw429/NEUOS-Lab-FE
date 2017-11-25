@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>教师管理后台</title>
     <!--文档 http://www.materialscss.com -->
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
 </head>
 <body class="grey lighten-4">
@@ -38,16 +42,10 @@
             <a style="border: 0; " href="students.html" class="collection-item grey lighten-4 black-text"><i
                     class="material-icons"
                     style="vertical-align:bottom">star</i>&nbsp;&nbsp;学生管理</a>
-            <a style="border: 0; " href='#' class="dropdown-button collection-item grey lighten-2 blue-text"
-               data-activates='experiment-list' data-beloworigin="true"><i
+            <a style="border: 0; " href='#' class="dropdown-button collection-item grey lighten-2 blue-text"><i
                     class="material-icons"
                     style="vertical-align:bottom">star</i>&nbsp;&nbsp;作业管理</a>
-            <ul class='dropdown-content' id="experiment-list">
-                <li><a href="#!">one</a></li>
-                <li><a href="#!">two</a></li>
-                <li class="divider"></li>
-                <li><a href="#!">three</a></li>
-            </ul>
+
         </div>
     </div>
 
@@ -58,6 +56,7 @@
         9-columns-wide on large screens,
         8-columns-wide on medium screens,
         12-columns-wide on small screens  -->
-
+    </div>
+</div>
 </body>
 </html>

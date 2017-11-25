@@ -1,11 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <title>教师管理后台</title>
     <!--文档 http://www.materialscss.com -->
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <!--Import jQuery before materialize.js-->
+    <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
 </head>
 <body class="grey lighten-4">
@@ -54,12 +58,72 @@
         8-columns-wide on medium screens,
         12-columns-wide on small screens  -->
 
-        <a class="waves-effect waves-light btn blue"><i
+        <button class="waves-effect waves-light btn blue modal-trigger" data-target="upload"><i
                 class="material-icons"
-                style="vertical-align:bottom;">file_upload</i>文件导入</a>
-        <a class="waves-effect waves-light btn blue"><i
+                style="vertical-align:bottom;">file_upload</i>文件导入
+        </button>
+        <button class="waves-effect waves-light btn blue modal-trigger" data-target="add"><i
                 class="material-icons"
-                style="vertical-align:bottom;">add</i>手动添加</a>
+                style="vertical-align:bottom;">add</i>手动添加
+        </button>
+
+        <div id="upload" class="modal">
+            <div class="modal-content">
+                <h5>文件上传</h5>
+                <form action="#">
+                    <div class="file-field input-field">
+                        <div class="btn blue">
+                            <span>选择文件</span>
+                            <input type="file"/>
+                        </div>
+                        <input class="file-path validate" type="text"/>
+                    </div>
+                </form>
+                <p>支持文件格式：xlsx或xls<br>第一列为学号，第二列为姓名（可选），重复学生自动去重</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+            </div>
+        </div>
+
+        <div id="add" class="modal">
+            <div class="modal-content">
+                <h5>手动添加</h5>
+                <div class="input-field col s6">
+                    <input id="id" type="text" class="validate">
+                    <label for="id">学号</label>
+                </div>
+                <div class="input-field col s6">
+                    <input id="name" type="text" class="validate">
+                    <label for="name">姓名</label>
+                </div>
+                <p>如果学号已存在，本操作将更新其对应的学生姓名</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+            </div>
+        </div>
+
+        <script>
+            $(document).ready(function () {
+                // 注意指定对应的id
+                $('.modal').modal({
+                    dismissible: true, // 点击模态外面模态消失关闭
+                    opacity: .5, // 相对于背景的不透明度
+                    in_duration: 300, // 显示特效的时间
+                    out_duration: 200, // 消失特效时间
+                    starting_top: '4%', // 启动时的样式属性
+                    ending_top: '10%', // 结束时的样式属性
+                    ready: function (modal, trigger) {
+                        console.log(modal, trigger);
+                    },
+                    complete: function () {
+                    }
+                });
+            });
+        </script>
         <table>
             <thead>
             <tr>
@@ -138,6 +202,6 @@
             </tbody>
         </table>
     </div>
-
+</div>
 </body>
 </html>
