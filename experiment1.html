@@ -94,17 +94,65 @@
                     <div class="switch">
                         <label>
                             停止
-                            <input class="blue-text" type="checkbox" checked>
-                            <span class="lever "></span>
-                            进行中
+                            <input type="checkbox" checked>
+                            <span class="lever"></span>
+                            进行
                         </label>
                     </div>
                 </td>
-                <td>2017年9月9日 22:00（已到期）<a class="waves-effect waves-light btn blue">修改</a></td>
+                <td class="red-text">2017年9月9日 22:00（已到期）<a class="waves-effect waves-light btn blue modal-trigger"
+                                                            href="#deadline">修改</a></td>
             </tr>
-
             </tbody>
         </table>
+
+        <div id="deadline" class="modal modal-fixed-footer">
+            <div class="modal-content">
+                <h5>截止时间设置</h5>
+                日期
+                <input type="text" class="datepicker">
+                时间
+                <input type="text" class="timepicker">
+                <p>截止时间后学生仍可提交作业，但会被标注为未按时</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+            </div>
+        </div>
+        <script> $(document).ready(function () {
+            // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
+            $('.modal').modal();
+
+        });
+      
+        $('.datepicker').pickadate({
+            selectMonths: true, // Creates a dropdown to control month
+            selectYears: 2, // Creates a dropdown of 15 years to control year,
+            today: '转到今天',
+            clear: '清除',
+            close: '确定',
+            closeOnSelect: false,// Close upon selecting a date,
+            monthsFull: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            monthsShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            weekdaysFull: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            weekdaysShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+            weekdaysLetter: ['日', '一', '二', '三', '四', '五', '六'],
+        });
+        $('.timepicker').pickatime({
+            default: 'now', // Set default time: 'now', '1:30AM', '16:30'
+            fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
+            twelvehour: false, // Use AM/PM or 24-hour format
+            donetext: '确定', // text for done-button
+            cleartext: '清除', // text for clear-button
+            canceltext: '取消', // Text for cancel-button
+            autoclose: false, // automatic close timepicker
+            ampmclickable: true, // make AM PM clickable
+            aftershow: function () {
+            } //Function for after opening timepicker
+        });
+        </script>
+
         <h5 style="padding: 15px 0 9.84px 0">已提交名单</h5>
         <table></table>
         <h5 style="padding: 15px 0 9.84px 0">未提交名单</h5>
