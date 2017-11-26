@@ -11,6 +11,38 @@
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
+    <style type="text/css">
+        .picker__date-display {
+            background-color: #2196f3;
+        }
+
+        .picker__day--selected,
+        .picker__day--selected:hover,
+        .picker--focused .picker__day--selected {
+            background-color: #2196f3;
+        }
+
+        .picker__close, .picker__today, .picker__clear {
+            color: #2196f3;
+        }
+
+        clockpicker-canvas-bearing {
+            fill: #2196f3;
+        }
+
+        .clockpicker-canvas-bg {
+            fill: #2196f3;
+        }
+
+        .clockpicker-canvas-bg-trans {
+            fill: #2196f3;
+        }
+
+        .clockpicker-canvas line {
+            stroke: #2196f3;
+        }
+
+    </style>
 </head>
 <body class="grey lighten-4">
 <!-- Navbar goes here -->
@@ -113,7 +145,7 @@
                 <input type="text" class="datepicker">
                 时间
                 <input type="text" class="timepicker">
-                <p>截止时间后学生仍可提交作业，但会被标注为未按时</p>
+                <p>截止时间后学生仍可提交作业，但会被标注为未按时。</p>
             </div>
             <div class="modal-footer">
                 <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
@@ -123,9 +155,9 @@
         <script> $(document).ready(function () {
             // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
-
+            document.getElementsByClassName('picker__date-display').style.backgroundColor = '#2196f3';
         });
-      
+
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 2, // Creates a dropdown of 15 years to control year,
@@ -154,9 +186,34 @@
         </script>
 
         <h5 style="padding: 15px 0 9.84px 0">已提交名单</h5>
-        <table></table>
+        <table>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>提交时间</th>
+                <th>是否按时</th>
+                <th>评定分数</th>
+                <th>查看作业</th>
+            </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
         <h5 style="padding: 15px 0 9.84px 0">未提交名单</h5>
-        <table></table>
+        <table>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>是否绑定GitHub</th>
+                <th>作业是否下载</th>
+
+                <th>操作</th>
+            </tr>
+            </thead>
+        </table>
     </div>
 </div>
 </body>
