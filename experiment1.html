@@ -71,15 +71,40 @@
         12-columns-wide on small screens  -->
         <h4 style="padding: 15px 0 9.84px 0">作业1</h4>
         <h5 style="padding: 15px 0 9.84px 0">作业管理</h5>
-        <i class="material-icons"
-           style="vertical-align:bottom">check</i>已下发
+        <table class="responsive-table">
+            <thead>
+            <tr>
+                <th>下发状态</th>
+                <th>提交入口</th>
+                <th>截止时间</th>
+            </thead>
+            <tbody>
+            <tr>
+                <td> <!-- Switch -->
+                    <div class="switch">
+                        <label>
+                            关闭
+                            <input type="checkbox" checked>
+                            <span class="lever"></span>
+                            下发
+                        </label>
+                    </div>
+                </td>
+                <td>
+                    <div class="switch">
+                        <label>
+                            停止
+                            <input class="blue-text" type="checkbox" checked>
+                            <span class="lever "></span>
+                            进行中
+                        </label>
+                    </div>
+                </td>
+                <td>2017年9月9日 22:00（已到期）<a class="waves-effect waves-light btn blue">修改</a></td>
+            </tr>
 
-        <a class="waves-effect waves-light btn blue">关闭</a>
-        <i class="material-icons"
-           style="vertical-align:bottom">check</i>进行中
-        <a class="waves-effect waves-light btn blue">停止</a>
-        截止时间：2017年9月9日 22:00（已到期）
-        <a class="waves-effect waves-light btn blue">修改</a>
+            </tbody>
+        </table>
         <h5 style="padding: 15px 0 9.84px 0">已提交名单</h5>
         <table></table>
         <h5 style="padding: 15px 0 9.84px 0">未提交名单</h5>
