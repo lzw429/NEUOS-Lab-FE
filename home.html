@@ -27,12 +27,13 @@
 <!-- Page Layout here -->
 <div class="row">
     <div class="container">
+        <h5 style="padding-top: 15px;">个人信息</h5>
         <table>
             <thead>
             <tr>
                 <th>学号</th>
                 <th>姓名</th>
-                <th>Github</th>
+                <th>GitHub</th>
                 <th>操作</th>
             </tr>
             </thead>
@@ -47,22 +48,12 @@
             </tr>
             </tbody>
         </table>
-
-        <div id="info_setting" class="modal">
-            <div class="modal-content">
-                <div class="input-field col s6">
-                    <input value="https://github.com/" id="name" type="text" class="validate" placeholder="GitHub">
-                </div>
-            </div>
-            <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">保存</a>
-            </div>
-        </div>
-
+        <h5>作业信息</h5>
         <table>
             <thead>
             <tr>
                 <th>序号</th>
+                <th>实验环境</th>
                 <th>提交入口</th>
                 <th>截止时间</th>
                 <th>提交时间</th>
@@ -72,12 +63,25 @@
             </tr>
             </thead>
             <tbody>
-            <tr>
+            <tr class="hoverable">
                 <td>作业1</td>
+                <td><a href="#">下载</a></td>
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>2017年9月9日 22:00</td>
                 <td>2017年9月8日 17:20</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td>10/10</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+            </tr>
+            <tr class="hoverable">
+                <td>作业2</td>
+                <td><a href="#">下载</a></td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td>2017年9月18日 23:59</td>
+                <td>2017年9月14日 21:59</td>
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>9/10</td>
@@ -105,14 +109,26 @@
             });
         });
     </script>
+    <div id="info_setting" class="modal">
+        <div class="modal-content">
+            <h5>个人信息</h5>
+            <label for="id">姓名</label>
+            <input id="id" type="text" class="validate">
+            <label for="GitHub">GitHub账号</label>
+            <input id="GitHub" type="text" class="validate" placeholder="https://github.com/[user-name]">
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+        </div>
+    </div>
 
     <div id="repo_submit" class="modal">
         <div class="modal-content">
-            <h5>提交作业1</h5>
+            <h5>提交作业</h5>
             <label class="active" for="repo1">GitHub repository</label>
-            <input value="https://github.com/" id="repo1" type="text" class="validate inline"
-                   placeholder="GitHub Repository">
-
+            <input value="https://github.com/" id="repo1" type="text" class="validate" placeholder="GitHub Repository">
+            <p>该地址可重复修改。</p>
         </div>
         <div class="modal-footer">
             <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
