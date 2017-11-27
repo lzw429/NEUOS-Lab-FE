@@ -132,13 +132,14 @@
                         </label>
                     </div>
                 </td>
-                <td class="red-text">2017年9月9日 22:00（已到期）<a class="waves-effect waves-light btn blue modal-trigger"
-                                                            href="#deadline">修改</a></td>
+                <td class="red-text" id="deadline">2017年9月9日 22:00（已到期）<a
+                        class="waves-effect waves-light btn blue modal-trigger"
+                        href="#deadline">修改</a></td>
             </tr>
             </tbody>
         </table>
 
-        <div id="deadline" class="modal modal-fixed-footer">
+        <div id="deadline_setting" class="modal modal-fixed-footer">
             <div class="modal-content">
                 <h5>截止时间设置</h5>
                 日期
@@ -155,7 +156,6 @@
         <script> $(document).ready(function () {
             // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
-            document.getElementsByClassName('picker__date-display').style.backgroundColor = '#2196f3';
         });
 
         $('.datepicker').pickadate({
@@ -198,7 +198,6 @@
             </tr>
             </thead>
             <tbody>
-
             </tbody>
         </table>
         <h5 style="padding: 15px 0 9.84px 0">未提交名单</h5>

@@ -26,29 +26,100 @@
 
 <!-- Page Layout here -->
 <div class="row">
+    <div class="container">
+        <table>
+            <thead>
+            <tr>
+                <th>学号</th>
+                <th>姓名</th>
+                <th>Github</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>20165248</td>
+                <td>name</td>
+                <td><a href="#">https://github.com/lzw429&nbsp;&nbsp;</a></td>
+                <td>
+                    <a class="waves-effect waves-light btn blue modal-trigger"
+                       href="#info_setting">修改</a></td>
+            </tr>
+            </tbody>
+        </table>
 
-    <div class="col s12 m4 l3"> <!-- Note that "m4 l3" was added -->
-        <!-- Grey navigation panel
+        <div id="info_setting" class="modal">
+            <div class="modal-content">
+                <div class="input-field col s6">
+                    <input value="https://github.com/" id="name" type="text" class="validate" placeholder="GitHub">
+                </div>
+            </div>
+            <div class="modal-footer">
+                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">保存</a>
+            </div>
+        </div>
 
-        This content will be:
-        3-columns-wide on large screens,
-        4-columns-wide on medium screens,
-        12-columns-wide on small screens  -->
-
-
+        <table>
+            <thead>
+            <tr>
+                <th>序号</th>
+                <th>提交入口</th>
+                <th>截止时间</th>
+                <th>提交时间</th>
+                <th>是否按时</th>
+                <th>得分</th>
+                <th>操作</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>作业1</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td>2017年9月9日 22:00</td>
+                <td>2017年9月8日 17:20</td>
+                <td><i class="material-icons"
+                       style="vertical-align:bottom">check</i></td>
+                <td>9/10</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+            </tr>
+            </tbody>
+        </table>
     </div>
 
+    <script>
+        $(document).ready(function () {
+            // 注意指定对应的id
+            $('.modal').modal({
+                dismissible: true, // 点击模态外面模态消失关闭
+                opacity: .5, // 相对于背景的不透明度
+                in_duration: 300, // 显示特效的时间
+                out_duration: 200, // 消失特效时间
+                starting_top: '4%', // 启动时的样式属性
+                ending_top: '10%', // 结束时的样式属性
+                ready: function (modal, trigger) {
+                    console.log(modal, trigger);
+                },
+                complete: function () {
+                }
+            });
+        });
+    </script>
 
-    <div class="col s12 m8 l9" style="padding: 20px 11.25px;"> <!-- Note that "m8 l9" was added -->
-        <!-- Teal page content
+    <div id="repo_submit" class="modal">
+        <div class="modal-content">
+            <h5>提交作业1</h5>
+            <label class="active" for="repo1">GitHub repository</label>
+            <input value="https://github.com/" id="repo1" type="text" class="validate inline"
+                   placeholder="GitHub Repository">
 
-        This content will be:
-        9-columns-wide on large screens,
-        8-columns-wide on medium screens,
-        12-columns-wide on small screens  -->
-
-
+        </div>
+        <div class="modal-footer">
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
+            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+        </div>
     </div>
+
 </div>
 </body>
 </html>
