@@ -29,11 +29,11 @@ clockpicker-canvas-bearing {
 }
 
 .switch label input[type=checkbox]:checked + .lever:after {
-    background-color: #42a5f5; /*switch lever on 按钮颜色*/
+    background-color: #4785f5; /*switch lever on 按钮颜色*/
 }
 
 .switch label input[type=checkbox]:checked + .lever {
-    background-color: #80d8ff; /*switch lever 背景色*/
+    background-color: #8dbcf4; /*switch lever 背景色*/
 }
 
 input.valid:not([type]), input.valid:not([type]):focus,
