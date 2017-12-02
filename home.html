@@ -7,6 +7,7 @@
     <!--文档 http://www.materialscss.com -->
     <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="css/myCSS.css">
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
@@ -34,17 +35,17 @@
                 <th>学号</th>
                 <th>姓名</th>
                 <th>GitHub</th>
-                <th>操作</th>
+                <th><!----></th>
             </tr>
             </thead>
             <tbody>
             <tr>
-                <td>20165248</td>
-                <td>name</td>
-                <td><a href="#">https://github.com/lzw429&nbsp;&nbsp;</a></td>
+                <td id="id">20165248</td>
+                <td id="name"></td>
+                <td><a id="GitHub" href="#"></td>
                 <td>
                     <a class="waves-effect waves-light btn blue modal-trigger"
-                       href="#info_setting">修改</a></td>
+                       href="#info_setting">编辑</a></td>
             </tr>
             </tbody>
         </table>
@@ -137,32 +138,48 @@
                 out_duration: 200, // 消失特效时间
                 starting_top: '4%', // 启动时的样式属性
                 ending_top: '10%', // 结束时的样式属性
-                ready: function (modal, trigger) {
-                    console.log(modal, trigger);
-                },
-                complete: function () {
-                }
             });
         });
     </script>
-    <div id="info_setting" class="modal">
+    <div id="info_setting" class="modal"><!--个人信息模态框-->
         <div class="modal-content">
             <h5>个人信息</h5>
-            <label for="id">姓名</label>
-            <input id="id" type="text" class="validate">
-            <label for="GitHub">GitHub账号</label>
-            <input id="GitHub" type="text" class="validate" placeholder="https://github.com/[user-name]">
+            <label for="name_submit">姓名</label>
+            <input id="name_submit" type="text" class="validate">
+            <label for="GitHub_submit">GitHub账号</label>
+            <input id="GitHub_submit" type="text" class="validate" placeholder="https://github.com/(user-name)"
+                   onclick=" if (document.getElementById('GitHub_submit').value === '') {
+            document.getElementById('GitHub_submit').value = 'https://github.com/';
+        }">
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat" id="submitName&Github">提交</a>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat"
+                    onclick="if(document.getElementById('GitHub_submit').value==='https://github.com/'){document.getElementById('GitHub_submit').value='';}">
+                取消
+            </button>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat"
+                    id="submit_Name&Github"
+                    onclick="
+                    if(document.getElementById('name_submit').value==='')
+                        {Materialize.toast('请键入姓名', 4000, 'rounded');}
+                    else{
+                        document.getElementById('name').innerHTML=document.getElementById('name_submit').value;}
+                    if(document.getElementById('GitHub_submit').value==='https://github.com/'||document.getElementById('GitHub_submit').value==='')
+                        {
+                            document.getElementById('GitHub_submit').value='';
+                            Materialize.toast('请键入GitHub账号', 4000, 'rounded');
+                        }
+                    else
+                    {
+                        document.getElementById('GitHub').innerHTML=document.getElementById('GitHub_submit').value;
+                        document.getElementById('GitHub').href=document.getElementById('GitHub_submit').value;
+                    }">
+                提交
+            </button>
         </div>
     </div>
-    <script>
 
-    </script>
-
-    <div id="repo_submit" class="modal">
+    <div id="repo_submit" class="modal"><!--提交作业模态框-->
         <div class="modal-content">
             <h5>提交作业</h5>
             <label class="active" for="repo1">GitHub repository</label>
@@ -170,8 +187,8 @@
             <p>该地址可重复修改。</p>
         </div>
         <div class="modal-footer">
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">取消</a>
-            <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat">取消</button>
+            <button class="modal-action modal-close waves-effect waves-green btn-flat">提交</button>
         </div>
     </div>
 
