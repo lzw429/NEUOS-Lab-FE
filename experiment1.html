@@ -102,7 +102,7 @@
                         </label>
                     </div>
                 </td>
-                <td class="red-text" id="deadline">2017年9月9日 22:00（已到期）<a
+                <td><span id="deadline">2017年9月9日 22:00（已到期）</span><a
                         class="waves-effect waves-light btn blue modal-trigger"
                         href="#deadline_setting">修改</a></td>
             </tr>
@@ -110,19 +110,26 @@
         </table>
 
         <div id="deadline_setting" class="modal modal-fixed-footer">
+            <!--截止时间设置模态框-->
             <div class="modal-content">
                 <h5>截止时间设置</h5>
                 日期
-                <input type="text" class="datepicker">
+                <input type="text" class="datepicker" id="datapicker">
                 时间
-                <input type="text" class="timepicker">
+                <input type="text" class="timepicker" id="timepicker">
                 <p>截止时间后学生仍可提交作业，但会被标注为未按时。</p>
             </div>
             <div class="modal-footer">
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">关闭</a>
-                <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat">提交</a>
+                <button class="modal-action modal-close waves-effect waves-green btn-flat">关闭</button>
+                <button class="modal-action modal-close waves-effect waves-green btn-flat"
+                        onclick="
+                        if(document.getElementById('datepicker').value!='' && document.getElementById('timepicker').value!='')
+                        document.getElementById('deadline').innerHTML=document.getElementById('datepicker').value+document.getElementById('timepicker').value;">
+                    提交
+                </button>
             </div>
         </div>
+
         <script> $(document).ready(function () {
             // the "href" attribute of the modal trigger must specify the modal ID that wants to be triggered
             $('.modal').modal();
@@ -131,12 +138,13 @@
         $('.datepicker').pickadate({
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 2, // Creates a dropdown of 15 years to control year,
-            today: '转到今天',
+            format: 'yyyy年mmmmd日',
+            today: '选择今天',
             clear: '清除',
             close: '确定',
             closeOnSelect: false,// Close upon selecting a date,
-            monthsFull: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
-            monthsShort: ['一月', '二月', '三月', '四月', '五月', '六月', '七月', '八月', '九月', '十月', '十一月', '十二月'],
+            monthsFull: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
+            monthsShort: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'],
             weekdaysFull: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
             weekdaysShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
             weekdaysLetter: ['日', '一', '二', '三', '四', '五', '六'],
@@ -178,7 +186,6 @@
                 <th>姓名</th>
                 <th>是否绑定GitHub</th>
                 <th>作业是否下载</th>
-
                 <th>操作</th>
             </tr>
             </thead>
