@@ -8419,7 +8419,7 @@ if (Vel) {
     // Div for short Month
     'span', createMonthLabel("short_months") + ' ', settings.klass.month_display) + _.node(
     // Div for Day
-    'span', createDayLabel()+'ri', settings.klass.day_display), settings.klass.date_display) +
+    'span', createDayLabel()+ '日', settings.klass.day_display), settings.klass.date_display) +
     // Calendar container
     _.node('div', _.node('div', _.node('div', (settings.selectYears ? createMonthLabel() + createYearLabel() : createMonthLabel() + createYearLabel()) + createMonthNav() + createMonthNav(1), settings.klass.header) + _.node('table', tableHead + _.node('tbody', _.group({
       min: 0,

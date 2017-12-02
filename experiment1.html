@@ -123,7 +123,7 @@
                 <button class="modal-action modal-close waves-effect waves-green btn-flat">关闭</button>
                 <button class="modal-action modal-close waves-effect waves-green btn-flat"
                         onclick="
-                        if(document.getElementById('datepicker').value!='' && document.getElementById('timepicker').value!='')
+                        if($('#datepicker').val()!='' && $('#timepicker').val()!='')
                         document.getElementById('deadline').innerHTML=document.getElementById('datepicker').value+document.getElementById('timepicker').value;">
                     提交
                 </button>
