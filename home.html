@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-cmn-Hans">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="css/myCSS.css">
     <!--Import jQuery before materialize.js-->
     <script type="text/javascript" src="js/jquery-3.2.1.js"></script>
-    <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/materialize.js"></script>
 </head>
 <body class="grey lighten-4">
@@ -42,7 +41,7 @@
             <tr>
                 <td id="id">20165248</td>
                 <td id="name"></td>
-                <td><a id="GitHub" href="#"></td>
+                <td><a id="GitHub" href="#"></a></td>
                 <td>
                     <a class="waves-effect waves-light btn blue modal-trigger"
                        href="#info_setting">编辑</a></td>
@@ -74,7 +73,7 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>10/10</td>
-                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</a></td>
             </tr>
             <tr class="hoverable">
                 <td>作业2</td>
@@ -86,7 +85,7 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>9/10</td>
-                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</a></td>
             </tr>
             <tr class="hoverable">
                 <td>作业3</td>
@@ -98,7 +97,7 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>9/10</td>
-                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</a></td>
             </tr>
             <tr class="hoverable">
                 <td>作业4</td>
@@ -110,7 +109,7 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">check</i></td>
                 <td>10/10</td>
-                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</a></td>
             </tr>
             <tr class="hoverable">
                 <td>作业5</td>
@@ -122,7 +121,7 @@
                 <td><i class="material-icons"
                        style="vertical-align:bottom">close</i></td>
                 <td>9/10</td>
-                <td><a href="#repo_submit" class="modal-trigger">提交</td>
+                <td><a href="#repo_submit" class="modal-trigger">提交</a></td>
             </tr>
             </tbody>
         </table>
@@ -137,7 +136,7 @@
                 in_duration: 300, // 显示特效的时间
                 out_duration: 200, // 消失特效时间
                 starting_top: '4%', // 启动时的样式属性
-                ending_top: '10%', // 结束时的样式属性
+                ending_top: '10%' // 结束时的样式属性
             });
         });
     </script>
@@ -148,7 +147,7 @@
             <input id="name_submit" type="text" class="validate">
             <label for="GitHub_submit">GitHub帐号</label>
             <input id="GitHub_submit" type="text" class="validate" placeholder="https://github.com/(user-name)"
-                   onclick=" if (document.getElementById('GitHub_submit').value === '') {
+                   onclick="if (document.getElementById('GitHub_submit').value === '') {
             document.getElementById('GitHub_submit').value = 'https://github.com/';
         }">
         </div>
