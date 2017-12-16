@@ -42,9 +42,8 @@
                 <td id="id">20165248</td>
                 <td id="name"></td>
                 <td><a id="GitHub" href="#"></a></td>
-                <td>
-                    <a class="waves-effect waves-light btn blue modal-trigger"
-                       href="#info_setting">编辑</a></td>
+                <td><a class="waves-effect waves-light btn blue modal-trigger"
+                       href="#info_setting" id="setting">编辑</a></td>
             </tr>
             </tbody>
         </table>
@@ -138,7 +137,11 @@
                 starting_top: '4%', // 启动时的样式属性
                 ending_top: '10%' // 结束时的样式属性
             });
+
+            //自动弹出 个人信息模态框
+            $('#info_setting').modal('open');
         });
+
     </script>
     <div id="info_setting" class="modal"><!--个人信息模态框-->
         <div class="modal-content">
