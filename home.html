@@ -182,12 +182,23 @@
         </div>
     </div>
 
-    <div id="repo_submit" class="modal"><!--提交作业模态框-->
+    <div id="repo_submit" class="modal"><!--提交作业 模态框-->
         <div class="modal-content">
             <h5>提交作业</h5>
             <label class="active" for="repo1">GitHub repository</label>
             <input value="https://github.com/" id="repo1" type="text" class="validate" placeholder="GitHub Repository">
-            <p>该地址可重复修改。</p>
+            <label for="choose_file">文件</label>
+            <form action="#" id="choose_file">
+                <div class="file-field input-field">
+                    <div class="btn blue">
+                        <span>选择文件</span>
+                        <input type="file"/>
+                    </div>
+                    <input class="file-path validate" type="text"/>
+                </div>
+            </form>
+            <label for="comment">注释</label>
+            <textarea id="comment" class="materialize-textarea black-text"></textarea>
         </div>
         <div class="modal-footer">
             <button class="modal-action modal-close waves-effect waves-green btn-flat">取消</button>
