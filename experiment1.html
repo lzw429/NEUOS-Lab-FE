@@ -121,8 +121,7 @@
                 <button class="modal-action modal-close waves-effect waves-green btn-flat">关闭</button>
                 <button class="modal-action modal-close waves-effect waves-green btn-flat"
                         onclick="
-                        if($('#datepicker').val()!=='' && $('#timepicker').val()!=='')
-                        document.getElementById('deadline').innerHTML=document.getElementById('datepicker').value+document.getElementById('timepicker').value;">
+                     document.getElementById('deadline').innerText='2018年1月5日 23:59（还有5天）';">
                     提交
                 </button>
             </div>
@@ -133,7 +132,7 @@
             $('.modal').modal();
         });
 
-        $('.datepicker').pickadate({
+        $('.datepicker').pickadate({ // 日期选择器
             selectMonths: true, // Creates a dropdown to control month
             selectYears: 2, // Creates a dropdown of 15 years to control year,
             format: 'yyyy年mmmmd日',
@@ -147,7 +146,7 @@
             weekdaysShort: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
             weekdaysLetter: ['日', '一', '二', '三', '四', '五', '六'],
         });
-        $('.timepicker').pickatime({
+        $('.timepicker').pickatime({ // 时间选择器
             default: 'now', // Set default time: 'now', '1:30AM', '16:30'
             fromnow: 0,       // set default time to * milliseconds from now (using with default = 'now')
             twelvehour: false, // Use AM/PM or 24-hour format
